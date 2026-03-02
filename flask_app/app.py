@@ -1,12 +1,20 @@
-from flask import Flask
-app = Flask(__name__) #Flask constructor
+from flask import Flask, redirect, url_for
+app = Flask(__name__)
 
-#Using a decorator to tell the application about URL association with functions
-@app.route('/hello/<name>') #Defines home route
-def hello_name(name): #Creating a function that is bound to home route when route page is accessed
-    return 'Hello %s!'% name
+@app.route('/admin')
+def hello_admin():
+    return 'Hello Admin'
 
-if __name__=='__main__':
-    app.run(debug=True) #Runs app in debug mode (makes sure the app is not needed to restart manually)
-                                                #if any changes whatsoever
+@app.route('/guest/<guest>')
+def hello_guest(guest):
+    return 'Hello %s as Guest' % guest
 
+@app.route('/user/<name>')
+def hello_user(name):
+    if name == 'admin':
+        return redirect(url_for('hello_admin'))
+    else:
+        return redirect(url_for('hello_guest', guest=name))
+
+if __name__== '__main__':
+   app.run(debug=True)
