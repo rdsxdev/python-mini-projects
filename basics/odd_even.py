@@ -11,5 +11,6 @@ if remainder == 0:
 else:
     print(f"{number} is an odd number.")
 
-#Printing the Remainder
-print(truncate(f"Remainder when divided by 2: {remainder}"))
+#Printing the Remainder if odd
+while remainder != 0:
+    print(truncate(f"Remainder when divided by 2: {remainder}"))
