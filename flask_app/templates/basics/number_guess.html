@@ -1,0 +1,20 @@
+<h1>Guess the Number (1-10)</h1>
+
+<form method = "POST">
+    <label>Enter your Guess:</label>
+    <input type:"number" name="guess" min="1" max="10" required><br><br>
+
+    <label>Do you want to see the correct number?</label><br>
+    <select name="choice">
+        <option value="n">No</option>
+        <option value="y">Yes</option>
+    </select><br><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+{% if result %}
+    <h2>{{result}}</h2>
+{% endif %}
+
+<a href="/basics">Back</a>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prime Checker</title>
+</head>
+<body>
+
+
+<h1>Prime Number Checker</h1>
+
+<form method="POST">
+    <label>Enter a number:</label><br>
+    <input type="number" name="number" required><br><br>
+
+    <button type="submit">Check</button>
+</form>
+
+{% if result %}
+    <h2>{{ result }}</h2>
+{% endif %}
+
+
+</body>
+</html>

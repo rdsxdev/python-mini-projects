@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String Tools</title>
+</head>
+<body>
+
+
+<h1>String Tools</h1>
+
+<form method="POST">
+    <label>Enter your string:</label><br>
+    <input type="text" name="text" required><br><br>
+
+    <button type="submit">Process</button>
+</form>
+
+{% if length is not none %}
+    <h3>Length: {{ length }}</h3>
+    <h3>Uppercase: {{ upper }}</h3>
+    <h3>Reversed: {{ reversed }}</h3>
+{% endif %}
+
+
+</body>
+</html>

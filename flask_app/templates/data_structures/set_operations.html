@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Set Operations</title>
+</head>
+<body>
+
+
+<h1>Set Operations</h1>
+
+<form method="POST">
+
+    <label>Enter Set 1 (space separated):</label><br>
+    <input type="text" name="set1" placeholder="e.g. 1 2 3" required><br><br>
+
+    <label>Enter Set 2 (space separated):</label><br>
+    <input type="text" name="set2" placeholder="e.g. 3 4 5" required><br><br>
+
+    <button type="submit">Calculate</button>
+
+</form>
+
+{% if error %}
+    <p style="color:red;">{{ error }}</p>
+{% endif %}
+
+{% if union %}
+    <h3>Union: {{ union }}</h3>
+    <h3>Intersection: {{ intersection }}</h3>
+    <h3>Difference (Set1 - Set2): {{ difference }}</h3>
+{% endif %}
+
+
+</body>
+</html>

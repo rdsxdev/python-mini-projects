@@ -1,0 +1,21 @@
+<h1>Odd-Even Checker</h1>
+
+<form method="POST">
+    <label>Enter a number: </label><br>
+    <input type="number" step="any" name="number" required><br><br>
+
+    <label>Decimal places to shorten:</label><br>
+    <input type="number" name="places" required><br><br>
+
+    <button type="submit">Check</button>
+</form>
+
+{% if result %}
+    <h2>{{result}}</h2>
+{% endif %}
+
+{% if remainder %}
+    <p>Remainder when divided by 2: {{ remainder }}</p>
+{% endif %}
+
+<a href="/basics">Back</a>

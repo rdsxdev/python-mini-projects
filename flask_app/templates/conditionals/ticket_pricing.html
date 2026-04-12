@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket Pricing</title>
+</head>
+<body>
+
+
+<h1>Ticket Pricing</h1>
+
+<form method="POST">
+
+    <label>Name:</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label>Age:</label><br>
+    <input type="number" name="age" required><br><br>
+
+    <button type="submit">Check Price</button>
+
+</form>
+
+{% if result %}
+    <h2>{{ result }}</h2>
+{% endif %}
+
+<a href="/conditionals">Back</a>
+
+</body>
+</html>

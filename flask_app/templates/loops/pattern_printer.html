@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pattern Printer</title>
+</head>
+<body>
+
+
+<h1>Diamond Pattern Printer</h1>
+
+<form method="POST">
+    <label>Enter number of rows:</label><br>
+    <input type="number" name="rows" required><br><br>
+
+    <button type="submit">Generate</button>
+</form>
+
+{% if error %}
+    <p style="color:red;">{{ error }}</p>
+{% endif %}
+
+{% if pattern %}
+    <pre>{{ pattern }}</pre>
+{% endif %}
+
+
+</body>
+</html>

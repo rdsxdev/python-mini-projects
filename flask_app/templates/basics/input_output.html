@@ -1,0 +1,21 @@
+<h1 xmlns:type="http://www.w3.org/1999/xhtml">Enter Your Details</h1>
+
+<form method = "POST">
+    <label>Name:</label><br>
+    <input type:"text" name="name" required><br><br>
+
+    <label>Age:</label><br>
+    <input type:"number" name="age" required><br><br>
+
+    <label>City:</label><br>
+    <input type:"text" name="city" required><br><br>
+
+    <button type="sumbit">Submit</button>
+
+</form>
+
+{% if result %}
+    <h2>{{ result }}</h2>
+{% endif %}
+
+<a href="/basics">Back</a>

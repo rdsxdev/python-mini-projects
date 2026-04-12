@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Manager</title>
+</head>
+<body>
+
+
+<h1>List Manager</h1>
+
+<!-- Add Item -->
+<h2>Add Item</h2>
+<form method="POST">
+    <input type="hidden" name="action" value="add">
+
+    <input type="text" name="item" required>
+    <button type="submit">Add</button>
+</form>
+
+<hr>
+
+<!-- Remove Item -->
+<h2>Remove Item</h2>
+<form method="POST">
+    <input type="hidden" name="action" value="remove">
+
+    <input type="text" name="remove_item" required>
+    <button type="submit">Remove</button>
+</form>
+
+<hr>
+
+<!-- Display Items -->
+<h2>Current List</h2>
+
+{% if items %}
+    <ul>
+        {% for item in items %}
+            <li>
+                {{ item }}
+
+                <!-- Quick delete button -->
+                <form method="POST" style="display:inline;">
+                    <input type="hidden" name="action" value="remove">
+                    <input type="hidden" name="remove_item" value="{{ item }}">
+                    <button type="submit">Delete</button>
+                </form>
+
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>List is empty.</p>
+{% endif %}
+
+{% if message %}
+    <p>{{ message }}</p>
+{% endif %}
+
+
+</body>
+</html>

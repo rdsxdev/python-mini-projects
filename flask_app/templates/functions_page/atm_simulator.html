@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ATM Simulator</title>
+</head>
+<body>
+
+
+<h1>ATM Simulator</h1>
+
+<h2>Current Balance: ₹{{ balance }}</h2>
+
+<!-- Check Balance -->
+<form method="POST">
+    <input type="hidden" name="action" value="check">
+    <button type="submit">Check Balance</button>
+</form>
+
+<hr>
+
+<!-- Deposit -->
+<h3>Deposit</h3>
+<form method="POST">
+    <input type="hidden" name="action" value="deposit">
+
+    <input type="number" step="any" name="amount" placeholder="Enter amount" required>
+    <button type="submit">Deposit</button>
+</form>
+
+<hr>
+
+<!-- Withdraw -->
+<h3>Withdraw</h3>
+<form method="POST">
+    <input type="hidden" name="action" value="withdraw">
+
+    <input type="number" step="any" name="amount" placeholder="Enter amount" required>
+    <button type="submit">Withdraw</button>
+</form>
+
+<hr>
+
+{% if message %}
+    <h3>{{ message }}</h3>
+{% endif %}
+
+
+</body>
+</html>
